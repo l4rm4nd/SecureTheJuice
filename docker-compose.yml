@@ -40,7 +40,7 @@ services:
       - traefik.enable=true # enable traefik
       - traefik.http.routers.api.rule=Host(`traefik.fictive.local`) # replace with your domain name
       - traefik.http.routers.api.service=api@internal # enable traefik api dashboard
-      - traefik.http.routers.api.middlewares=local-ipwhitelist@file # protect dashboard with basic auth and restrict access to private class subnets only    
+      - traefik.http.routers.api.middlewares=local-ipwhitelist@file # restrict dashboard access to private class subnets only    
     ports:
       - 80:80 # http
       - 443:443 # https
