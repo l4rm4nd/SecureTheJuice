@@ -20,7 +20,7 @@
 ## 🎓 Configuration
 
 1. Adjust the `docker-compose.yml` file to your needs. Especially adjust the traefik labels and example domain `fictive.local` to your valid domain, if available.
-2. Adjust the `traefik/fileConfig.yml` to your needs. Especially adjust the Authelia example domain `fictive.local` to your valid domain, if available.
+2. Adjust the `traefik/fileConfig.yml` to your needs.
 3. Adjust the `authelia/config/configuration.yml` to your needs. Especially adjust the Authelia example domain `fictive.local` to your valid domain, if available and all default secrets.
 4. Adjust the `authelia/config/user_database.yml` to your needs. Especially adjust the default users and secrets.
 
