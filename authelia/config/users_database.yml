@@ -1,0 +1,18 @@
+---
+###############################################################
+#                         Users Database                      #
+###############################################################
+
+# This file can be used if you do not have an LDAP set up.
+
+# List of users
+users:
+  SecureTheJuice:  # define here your username
+    disabled: false
+    displayname: "SecureTheJuice"
+    # generate a secure hash with: $ docker run authelia/authelia:latest authelia crypto hash generate argon2 --password 'SecureTheJuice'
+    password: "$argon2id$v=19$m=65536,t=3,p=4$evgty4Ph4YKCtML+ou9mkQ$/79zIZ4/TBjrIezICKeGCIKllzMjCIHdzTb+IzsJpkI"  
+    email: juicy@fictive.local
+    groups:
+      - fruitlovers
+...
