@@ -77,4 +77,4 @@ In order to access the Juice Shop, you will have to authenticate against Autheli
 
 The access controls are defined in Authelia's configuration file `authelia/config/configuration.yml`.
 
-The default user group `juicelovers` is allowed to gain access. The user `SecureTheJuice` is member of this group.
+The default user group `fruitlovers` is allowed to gain access. The user `SecureTheJuice` is member of this group.
