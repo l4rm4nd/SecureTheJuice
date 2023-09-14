@@ -38,7 +38,7 @@ services:
       - --serversTransport.insecureSkipVerify=true # set insecureSkipVerify to true to allow self-signed certificates
     labels:
       - traefik.enable=true # enable traefik
-      - traefik.http.routers.api.rule=Host(`traefik.fictive.local`) # define subdomain for the traefik api dashboard
+      - traefik.http.routers.api.rule=Host(`traefik.fictive.local`) # replace with your domain name
       - traefik.http.routers.api.service=api@internal # enable traefik api dashboard
       - traefik.http.routers.api.middlewares=local-ipwhitelist@file # protect dashboard with basic auth and restrict access to private class subnets only    
     ports:
@@ -68,11 +68,13 @@ services:
       - authelia
     labels:
       - traefik.enable=true
-      - traefik.http.routers.juiceshop.rule=Host(`juice.fictive.local`)
+      - traefik.http.routers.juiceshop.rule=Host(`juice.fictive.local`) # replace with your domain name
       - traefik.http.services.juiceshop.loadbalancer.server.port=3000   
       - traefik.docker.network=proxy
-      # Part for optional traefik middlewares
-      - traefik.http.routers.juiceshop.middlewares=authelia@file  
+      - traefik.http.middlewares.authelia.forwardauth.address=http://authelia:9091/api/verify?rd=https://auth.fictive.local'  # replace with your domain name
+      - traefik.http.middlewares.authelia.forwardauth.trustForwardHeader=true
+      - traefik.http.middlewares.authelia.forwardauth.authResponseHeaders=Remote-User,Remote-Groups,Remote-Name,Remote-Email
+      - traefik.http.routers.juiceshop.middlewares=authelia
 
   authelia:
     image: authelia/authelia
@@ -82,12 +84,9 @@ services:
     networks:
       - proxy
     labels:
-      - 'traefik.enable=true'
-      - 'traefik.http.routers.authelia.rule=Host(`auth.fictive.local`)'  # replace with your domain name
-      - 'traefik.http.routers.authelia.entrypoints=https'
-      - 'traefik.http.middlewares.authelia.forwardauth.address=http://authelia:9091/api/verify?rd=https://auth.fictive.local'  # replace with your domain name
-      - 'traefik.http.middlewares.authelia.forwardauth.trustForwardHeader=true'
-      - 'traefik.http.middlewares.authelia.forwardauth.authResponseHeaders=Remote-User,Remote-Groups,Remote-Name,Remote-Email'  # yamllint disable-line rule:line-length
+      - traefik.enable=true
+      - traefik.http.routers.authelia.rule=Host(`auth.fictive.local`)  # replace with your domain name
+      - traefik.http.routers.authelia.entrypoints=https
     expose:
       - 9091
     restart: unless-stopped
