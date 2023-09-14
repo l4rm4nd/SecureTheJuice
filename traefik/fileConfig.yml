@@ -44,17 +44,6 @@ http:
         stsPreload: true # HTTP-Strict-Transport-Security (HSTS)
         #contentSecurityPolicy: "block-all-mixed-content" # Content-Security-Policy (CSP)
 
-    # Authelia guard
-    authelia:
-      forwardauth:
-        address: http://authelia:9091/api/verify?rd=https://auth.fictive.local/  # replace example.com with your domain name
-        trustForwardHeader: true
-        authResponseHeaders:
-          - Remote-User
-          - Remote-Groups
-          - Remote-Name
-          - Remote-Email
-
     # rate limiting
     rate-limit:
       rateLimit:
