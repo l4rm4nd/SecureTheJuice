@@ -71,10 +71,7 @@ services:
       - traefik.http.routers.juiceshop.rule=Host(`juice.fictive.local`) # replace with your domain name
       - traefik.http.services.juiceshop.loadbalancer.server.port=3000   
       - traefik.docker.network=proxy
-      - traefik.http.middlewares.authelia.forwardauth.address=http://authelia:9091/api/verify?rd=https://auth.fictive.local'  # replace with your domain name
-      - traefik.http.middlewares.authelia.forwardauth.trustForwardHeader=true
-      - traefik.http.middlewares.authelia.forwardauth.authResponseHeaders=Remote-User,Remote-Groups,Remote-Name,Remote-Email
-      - traefik.http.routers.juiceshop.middlewares=authelia
+      - traefik.http.routers.juiceshop.middlewares=authelia@docker
 
   authelia:
     image: authelia/authelia
@@ -87,6 +84,9 @@ services:
       - traefik.enable=true
       - traefik.http.routers.authelia.rule=Host(`auth.fictive.local`)  # replace with your domain name
       - traefik.http.routers.authelia.entrypoints=https
+      - traefik.http.middlewares.authelia.forwardauth.address=http://authelia:9091/api/verify?rd=https://auth.fictive.local  # replace with your domain name
+      - traefik.http.middlewares.authelia.forwardauth.trustForwardHeader=true
+      - traefik.http.middlewares.authelia.forwardauth.authResponseHeaders=Remote-User,Remote-Groups,Remote-Name,Remote-Email      
     expose:
       - 9091
     restart: unless-stopped
