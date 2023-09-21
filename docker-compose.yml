@@ -24,7 +24,7 @@ services:
       ####################################################
       # !!! ADJUST TO YOUR INFRASTRUCTURE SETUP BELOW !!!!
       - --entrypoints.https.http.tls.certresolver=myresolver # define default cert resolver
-      - --certificatesresolvers.myresolver.acme.email=info@pentestfactory.de # define your email address
+      - --certificatesresolvers.myresolver.acme.email=info@example.com # define your email address
       - --certificatesresolvers.myresolver.acme.httpchallenge.entrypoint=http
       - --certificatesresolvers.myresolver.acme.storage=/etc/traefik/acme.json # define acme path for certificate information
       ####################################################
