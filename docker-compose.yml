@@ -1,6 +1,5 @@
-version: '3.8'
-
 services:
+
   traefik:
     image: traefik:v3.3
     container_name: traefik
