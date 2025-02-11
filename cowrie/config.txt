@@ -1,0 +1,6 @@
+[honeypot]
+
+hostname = juiceshop
+
+[ssh]
+version = SSH-2.0-OpenSSH_5.5p1 Debian+Juicy+Fruits
