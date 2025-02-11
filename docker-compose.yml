@@ -2,7 +2,7 @@ version: '3.8'
 
 services:
   traefik:
-    image: traefik:v2.9
+    image: traefik:v3.3
     container_name: traefik
     command:
       - --global.checkNewVersion=true # check for updates
@@ -109,6 +109,20 @@ services:
     restart: unless-stopped
     environment:
       - TZ=Europe/Berlin      
+
+  cowrie:
+    image: 'cowrie/cowrie:latest'
+    container_name: cowrie
+    volumes:
+      - ./cowrie/users.txt:/cowrie/cowrie-git/etc/userdb.txt:ro
+      - ./cowrie/config.cfg:/cowrie/cowrie-git/etc/cowrie.cfg:ro
+    ports:
+      - '2222:2222'
+    deploy:
+      resources:
+        limits:
+          cpus: '0.5'
+          memory: 100M
 
 networks:
   proxy:
