@@ -12,5 +12,14 @@
 # '!' at the start of a password will not grant this password access
 # '/' can be used to write a regular expression
 #
+
+# logins for ssh bruteforce testing
+J12934:x:letmein
+bjoern:x:letmein
+
+# login when admin md5 hash cracked from sqli
 root:x:admin123
+
+# logins for custom wordlist generation based on reviews on webshop
 bender:x:bender
+wurstbrot:x:wurstbrot
