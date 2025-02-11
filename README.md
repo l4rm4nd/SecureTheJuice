@@ -23,6 +23,7 @@
 2. Adjust the `traefik/fileConfig.yml` to your needs.
 3. Adjust the `authelia/config/configuration.yml` to your needs. Especially adjust the Authelia example domain `fictive.local` to your valid domain, if available and all default secrets.
 4. Adjust the `authelia/config/user_database.yml` to your needs. Especially adjust the default users and secrets.
+5. Adjust the `cowrie/users.txt` to your needs. These are the honeypot user accounts allowed to log into the fake SSH service on TCP/2222.
 
 If you do not have an own domain and registrar for DNS setup, you may keep using the `fictive.local` domain as is. If so, please ensure to properly setup your Linux's `/etc/hosts` file. I recommend the following entries:
 
