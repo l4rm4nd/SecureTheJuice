@@ -1,6 +1,6 @@
 <div align="center" width="100%">
     <h1>SecureTheJuice</h1>
-    <p>OWASP Juice Shop hosted by Traefik SSL Reverse Proxy and Authelia Single-Sign-On (SSO) provider.</p><p>
+    <p>OWASP Juice Shop hosted by Traefik SSL Reverse Proxy and Authelia Single-Sign-On (SSO) provider. Comes with Cowrie SSH honeypot too.</p><p>
     <a target="_blank" href="https://github.com/l4rm4nd"><img src="https://img.shields.io/badge/maintainer-LRVT-orange" /></a>
     <a target="_blank" href="https://GitHub.com/l4rm4nd/SecureTheJuice/graphs/contributors/"><img src="https://img.shields.io/github/contributors/l4rm4nd/SecureTheJuice.svg" /></a><br>
     <a target="_blank" href="https://GitHub.com/l4rm4nd/SecureTheJuice/commits/"><img src="https://img.shields.io/github/last-commit/l4rm4nd/SecureTheJuice.svg" /></a>
