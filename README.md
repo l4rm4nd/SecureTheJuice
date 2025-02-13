@@ -50,7 +50,7 @@ docker network create proxy
 docker compose up -d
 ````
 
-The OWASP Juice Shop web application is run behind Traefik + Authelia. Only TCP/80 (HTTP) and TCP/443 (HTTPS) of the Traefik container are mapped onto the Docker host.
+The OWASP Juice Shop web application is run behind Traefik + Authelia. Only TCP/80 (HTTP) and TCP/443 (HTTPS) of the Traefik container are mapped onto the Docker host. Additionally, a Cowrie SSH honeypot is exposed on TCP/2222.
 
 If you haven't changed the project files and ensured proper `/etc/hosts` entries, you will be able to access:
 
