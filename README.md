@@ -46,7 +46,13 @@ If the HTTP challenge fails, Traefik will issue self-signed SSL certificates.
 ## 🏃 Running
 
 ````
+# clone this repo
+git clone https://github.com/l4rm4nd/SecureTheJuice && cd SecureTheJuice
+
+# create docker network
 docker network create proxy
+
+# spawn the container stack
 docker compose up -d
 ````
 
