@@ -59,6 +59,8 @@ If you haven't changed the project files and ensured proper `/etc/hosts` entries
     - after Authelia login with default creds `SecureTheJuice:SecureTheJuice` 
 - Traefik API dashboard at https://traefik.fictive.local
     - from private class A networks only
+- Cowrie SSH Honeypot at TCP/2222
+    - allows logins with pre-defined credentials based on Juice Shop users
 
 ## 🔑 Authentication via Authelia
 
