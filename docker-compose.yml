@@ -58,6 +58,7 @@ services:
   juice-shop:
     image: bkimminich/juice-shop:latest
     container_name: juice-shop
+    restart: always
     expose:
       - 3000
     networks:
@@ -112,6 +113,7 @@ services:
   cowrie:
     image: 'cowrie/cowrie:latest'
     container_name: cowrie
+    restart: unless-stopped
     volumes:
       - ./cowrie/users.txt:/cowrie/cowrie-git/etc/userdb.txt:ro
       - ./cowrie/config.cfg:/cowrie/cowrie-git/etc/cowrie.cfg:ro
